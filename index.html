@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ANGULAR</title>
+  <script src="scripts/angular.min.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+  <ul ng-reprat="x in spisok">
+    <li>{{x}}</li>
+  </ul>
+  <div ng-include="'my.htm'">
+  <input type="text" name="" ng-model="name">
+  <p>{{name}}</p>
+  <div ng-controller="myCtrl">
+    <input type="text" ng-model="test">
+     <ul ng-reprat="x in spisok">
+    <li>{{x}}</li>
+  </ul>
+   
+  </div>
+  <input type="text" ng-model="myCol" style="background-color:{{myCol}} ">
+  
+  </div>
+  <script >
+    let app=angular.module("myApp",[]);
+    app.controller("myCtrl",function($scope){
+      $scope.myCol="blue";
+      $scope.spisok=["vasja"."Ptya","Ivan"]
+    });
+    app.controller("myCtrl",function($scope){
+      $scope.spisok=["vasja"."Ptya","Ivan"];
+    })
+  </script>
+</body>
+</html>
